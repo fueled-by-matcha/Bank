@@ -1,26 +1,27 @@
-
-abstract class Customer{
+//Author: Lauren Johnson, Liam Waddell
+//Student Number: 300016250_300021290
+//Course: ITI 1121 - Z
+//Assignment 1
+/*Class creates a Customer object
+*/
+abstract public class Customer{
 	//instance variables
-	private String firstName;
-	private String lastName;
-	private int age;
-	private int customerNumber;
-	private int lastCustomerNumber;
+	private String firstName;//customer first name
+	private String lastName;//customer last name
+	private int age;//customer age
+	private int customerNumber;//customer number
+	private static int lastCustomerNumber = 9999;//static used to increment customerNumber
+	private String address;//address
+	private String phoneNumber;//customer phone number
 	//Constructors 
-	public Customer(String f, String l, int a){
+	public Customer(String f, String l, int a, String ad, String p){
 		firstName = f;
 		lastName = l;
 		age = a;
-		customerNumber = 9999;
-		lastCustomerNumber = 9999;
-	}
-
-	public Customer (){
-		firstName = " ";
-		lastName = " ";
-		age = 18;
-		customerNumber = 9999;
-		lastCustomerNumber = 9999;
+		customerNumber = lastCustomerNumber + 1;
+		lastCustomerNumber = customerNumber;
+		address = ad;
+		phoneNumber = p;
 	}
 	//setter methods
 	/*Method sets firstName variable
@@ -36,8 +37,18 @@ abstract class Customer{
 	/*Method sets lastCustomerNumber by incrementing it by one everytime it is called when a new Customer
 	*is implemented
 	*/
-	public void setLastCustomerNumber (){
-		lastCustomerNumber++;
+	public void setCustomerNumber (){
+		customerNumber = lastCustomerNumber;
+	}
+	/*Method sets customer address
+	*/
+	public void setAddress(String a){
+		address = a;
+	}
+	/*Method sets telephone number
+	*/
+	public void setPhoneNumber(String p){
+		phoneNumber = p;
 	}
 	//getter methods
 
@@ -61,6 +72,16 @@ abstract class Customer{
 	public int getCustomerNumber(){
 		return customerNumber;
 	}
+	/*Method returns Customer address
+	*/
+	public String getAddress(){
+		return address;
+	}
+	/*Method returns Customer phoneNumber
+	*/
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
 	//override methods
 
 	/*Method returns true if one customer is equal to another
@@ -72,7 +93,7 @@ abstract class Customer{
 	*/
 	public String toString(){
 		String s;
-		s = "Customer name: " + firstName + " " + lastName+"/n"+ "Customer number: " + customerNumber;
+		s = "Name: " + firstName + " " + lastName + " Age: " + age + " Address: " + address + " Phone Number: "+ phoneNumber + " Customer number: " + customerNumber;
 		return s;
 	}
 	//abstract methods
@@ -86,4 +107,7 @@ abstract class Customer{
 	/*Method returns the check charge for a Customer
 	*/
 	public abstract double getCheckCharge();
+	/*Method returns the overdraft penalty for a Customer
+	*/
+	public abstract double getOverdraftPenalty();
 }
