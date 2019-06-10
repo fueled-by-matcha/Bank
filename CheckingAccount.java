@@ -1,5 +1,4 @@
-//Author: Lauren Johnson
-//Student Number: 300016250
+
 //Course: ITI 1121 - Z
 //Assignment 1
 /*Class creates a CheckingAccount object, an extension of Account
