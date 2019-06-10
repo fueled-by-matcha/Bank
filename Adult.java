@@ -1,5 +1,4 @@
-//Author: Lauren Johnson, Liam Waddell
-//Student Number: 300016250_300021290
+
 //Course: ITI 1121 - Z
 //Assignment 1
 /*Class creates an Adult object, an extension of Customer
